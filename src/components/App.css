@@ -1,0 +1,58 @@
+:root {
+  --main-bg-color: #f5f3f6;
+  --main-text-color: #030104;
+  --accent-text-color: #e95f66;
+}
+
+.App {
+  height: 100%;
+  min-height: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background-color: var(--main-bg-color);
+}
+
+.App-flex {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-heading {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-size: 3vh;
+  box-shadow: 0px 1px 1vh 1px rgba(34, 34, 34, 0.9);
+  z-index: 2;
+  max-height: 10vh;
+}
+
+.App-react {
+  color: var(--accent-text-color);
+  text-decoration: overline underline;
+}
+
+.App-billboard {
+  object-fit: fill;
+  min-width: 100vw;
+  max-width: 100vw;
+  max-height: 40vh;
+}
+
+.App-instructions {
+  background-color: var(--main-bg-color);
+  color: #222;
+  font-size: 3vh;
+  line-height: 1.5;
+  padding: 0 1em;
+}
+
+.App-instructions code {
+  background-color: #222;
+  color: #00d8ff;
+  padding: 0.2em 0.3em;
+  border-radius: 0.2em;
+}
