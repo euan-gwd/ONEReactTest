@@ -6,6 +6,7 @@
   background: var(--alt-bg-color);
   max-height: 50vh;
   position: relative;
+  box-shadow: var(--shadow);
 }
 
 .shopping-cart-header {

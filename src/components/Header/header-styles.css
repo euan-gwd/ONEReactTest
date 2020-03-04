@@ -12,11 +12,12 @@
   box-shadow: 0px 1px 1vh 1px rgba(34, 34, 34, 0.9);
   z-index: 2;
   min-height: 8vh;
-  padding: 0 1rem;
+  padding: 0 4vw;
 }
 
 .menubar-icon {
   color: var(--primary-hover);
+  font-size: 4vh;
 }
 
 .menubar-button-group {

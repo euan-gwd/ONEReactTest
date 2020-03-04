@@ -1,16 +1,27 @@
 .logo {
   color: var(--main-text-color);
-  padding: 0.125rem 0.25rem;
+  padding: 0.5rem 0.5rem 0.125rem;
   border: 2px solid var(--primary);
   text-transform: uppercase;
   font-size: medium;
 }
 
+.logo > sup {
+  font-size: 0.5rem;
+  margin-left: -3px;
+  padding: 0;
+}
+
 .logo-alt {
   color: var(--alt-text-color);
-  padding: 0.125rem 0.25rem;
+  padding: 0.5rem 0.5rem 0.125rem;
   border: 2px solid transparent;
   text-transform: uppercase;
   font-size: medium;
   background-color: var(--primary);
+}
+
+.logo-alt > sup {
+  font-size: 0.5rem;
+  margin-left: -3px;
 }

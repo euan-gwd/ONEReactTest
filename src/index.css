@@ -27,4 +27,5 @@ p {
   --secondary-hover: #bdbfc0;
   --item-divider: #f1f1f1;
   --section-divider: #848184;
+  --shadow: 0px 1px 4px 0px #8481847e;
 }
