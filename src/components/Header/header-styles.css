@@ -20,26 +20,30 @@
   font-size: 4vh;
 }
 
-.menubar-button-group {
-  display: grid;
-  grid-template-columns: repeat(4, 50px);
-  grid-template-rows: 50px;
+.menubar-cart {
+  justify-self: flex-end;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  grid-column-gap: 10px;
+  font-size: medium;
+  width: 6vw;
 }
 
-.menubar-button-group > .primary-button {
-  text-align: center;
-  color: var(--alt-text-color);
+.menubar-cart .icon {
+  color: var(--primary);
+}
+
+.menubar-cart .cart-count {
   background-color: var(--primary);
-  border: none;
-  text-transform: uppercase;
-}
-
-.menubar-button-group > .primary-button:hover {
+  margin-left: 0.25rem;
   color: var(--alt-text-color);
-  background-color: var(--primary-hover);
-  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  border-radius: 50%;
 }
 
 .App-hero {
