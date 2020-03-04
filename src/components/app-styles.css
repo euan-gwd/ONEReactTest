@@ -5,3 +5,8 @@
   flex-direction: column;
   justify-content: stretch;
 }
+
+.shop-container {
+  display: flex;
+  justify-content: space-between;
+}

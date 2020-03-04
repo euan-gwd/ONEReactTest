@@ -25,5 +25,6 @@ p {
   --primary-hover: #e73a57;
   --secondary: #e6e4e7;
   --secondary-hover: #bdbfc0;
-  --divider-grey: #f1f1f1;
+  --item-divider: #f1f1f1;
+  --section-divider: #848184;
 }
