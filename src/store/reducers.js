@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { LOAD_PRODUCTS_BEGIN, LOAD_PRODUCTS_SUCCESS, LOAD_PRODUCTS_ERROR } from './actions';
+import * as actionTypes from './constants';
 
 const initialState = {
   productsLoading: false,
@@ -9,16 +9,16 @@ const initialState = {
 
 export const reducer = produce((draft, action) => {
   switch (action.type) {
-    case LOAD_PRODUCTS_BEGIN:
+    case actionTypes.LOAD_PRODUCTS_BEGIN:
       draft.productsLoading = true;
       draft.productsError = null;
       return;
-    case LOAD_PRODUCTS_SUCCESS:
+    case actionTypes.LOAD_PRODUCTS_SUCCESS:
       draft.productsLoading = false;
       draft.productsError = null;
       draft.products = action.payload;
       return;
-    case LOAD_PRODUCTS_ERROR:
+    case actionTypes.LOAD_PRODUCTS_ERROR:
       draft.productsLoading = false;
       draft.productsError = action.error;
       return;
