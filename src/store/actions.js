@@ -19,7 +19,6 @@ export const loadProducts = () => {
 };
 
 export const addToCart = (product) => {
-  console.log('addToCart -> product', product);
   return (dispatch) => {
     dispatch({ type: actionTypes.ADD_TO_CART, payload: product });
   };
