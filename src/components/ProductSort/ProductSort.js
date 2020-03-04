@@ -7,15 +7,15 @@ import {
   sortProductsByPriceAscending,
   sortProductsByPriceDecending
 } from '../../store/actions';
-import './product-filter-styles.css';
+import './product-sort-styles.css';
 
-const ProductFilters = ({
+const ProductSort = ({
   sortProductsByTitleAscending,
   sortProductsByTitleDecending,
   sortProductsByPriceAscending,
   sortProductsByPriceDecending
 }) => (
-  <div className="product-filter">
+  <div className="product-sort">
     <div className="button-group">
       <button className="primary-button" onClick={() => sortProductsByTitleAscending()}>
         <FaSortAlphaDown /> Title
@@ -42,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(ProductFilters);
+export default connect(null, mapDispatchToProps)(ProductSort);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
 import ProductsList from './ProductsList/ProductsList';
-import ProductFilters from './ProductsList/ProductFilters';
+import ProductSort from './ProductSort/ProductSort';
 import Cart from './Cart/Cart';
 import Footer from './Footer/Footer';
 import './app-styles.css';
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ProductFilters />
+        <ProductSort />
         <main className="shop-container">
           <ProductsList />
           <Cart />

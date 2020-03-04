@@ -1,15 +1,15 @@
-.product-filter {
+.product-sort {
   margin: 1rem 1rem -0.5rem;
 }
 
-.product-filter .button-group {
+.product-sort .button-group {
   display: grid;
   grid-template-columns: repeat(4, 10vw);
   column-gap: 10px;
   justify-content: center;
 }
 
-.product-filter .primary-button {
+.product-sort .primary-button {
   padding: 0.25rem;
   text-align: center;
   color: var(--primary);
@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 
-.product-filter .primary-button:hover {
+.product-sort .primary-button:hover {
   color: var(--alt-text-color);
   background-color: var(--primary-hover);
   cursor: pointer;
