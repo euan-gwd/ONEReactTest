@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react';
 import billboard from './billboard.png';
+import Logo from '../Logo/Logo';
+import { FiAlignRight } from 'react-icons/fi';
 import './header-styles.css';
 
 const Header = () => {
   return (
     <Fragment>
       <div className="App-heading App-flex">
-        <h2>
-          Welcome to <span className="App-react">The Shopping Cart</span>
-        </h2>
+        <Logo />
+        <FiAlignRight className="menubar-icon" />
       </div>
       <div>
-        <img className="App-billboard" src={billboard} alt="billboard" />
+        <img className="App-hero" src={billboard} alt="hero image" />
       </div>
     </Fragment>
   );
