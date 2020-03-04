@@ -1,0 +1,27 @@
+.product-filter {
+  margin: 1rem 1rem -0.5rem;
+}
+
+.product-filter .button-group {
+  display: grid;
+  grid-template-columns: repeat(4, 10vw);
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.product-filter .primary-button {
+  padding: 0.25rem;
+  text-align: center;
+  color: var(--primary);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  width: 100%;
+  height: 5vh;
+  text-transform: uppercase;
+}
+
+.product-filter .primary-button:hover {
+  color: var(--alt-text-color);
+  background-color: var(--primary-hover);
+  cursor: pointer;
+}
