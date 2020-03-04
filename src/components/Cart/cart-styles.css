@@ -34,6 +34,14 @@
   border-radius: 50%;
 }
 
+.shopping-cart .empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+}
+
 .shopping-cart .cart-item {
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ProductItem from './ProductItem';
 import './product-list-styles.css';
 
 class ProductsList extends React.Component {
@@ -17,19 +18,7 @@ class ProductsList extends React.Component {
     return (
       <div className="products-listing">
         {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <div className="image-container">
-              <img src={product.images[0].src} alt="product Image" className="product-image" />
-            </div>
-            <div className="card-content">
-              <p className="title">{product.title}</p>
-              <p>{`£ 0`}</p>
-            </div>
-            <div className="button-group">
-              <button className="primary-button">Add to Cart</button>
-              <button className="secondary-button">Quick View</button>
-            </div>
-          </div>
+          <ProductItem key={product.id} product={product} />
         ))}
       </div>
     );

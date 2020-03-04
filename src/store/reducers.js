@@ -35,6 +35,9 @@ export const reducer = produce((draft, action) => {
     case actionTypes.SORT_PRODUCTS_PRICE_DESC:
       draft.products = action.payload;
       return;
+    case actionTypes.ADD_TO_CART:
+      draft.shoppingCart.push(action.payload);
+      return;
     default:
       return;
   }

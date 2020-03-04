@@ -18,7 +18,14 @@ export const loadProducts = () => {
   };
 };
 
-const sortProductsByTitleAscending = () => {
+export const addToCart = (product) => {
+  console.log('addToCart -> product', product);
+  return (dispatch) => {
+    dispatch({ type: actionTypes.ADD_TO_CART, payload: product });
+  };
+};
+
+export const sortProductsByTitleAscending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
     const sortedProducts = _orderBy(products, ['title'], ['asc']);
@@ -26,7 +33,7 @@ const sortProductsByTitleAscending = () => {
   };
 };
 
-const sortProductsByTitleDecending = () => {
+export const sortProductsByTitleDecending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
     const sortedProducts = _orderBy(products, ['title'], ['desc']);
@@ -34,7 +41,7 @@ const sortProductsByTitleDecending = () => {
   };
 };
 
-const sortProductsByPriceAscending = () => {
+export const sortProductsByPriceAscending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
     const sortedProducts = _orderBy(products, ['price'], ['asc']);
@@ -42,7 +49,7 @@ const sortProductsByPriceAscending = () => {
   };
 };
 
-const sortProductsByPriceDecending = () => {
+export const sortProductsByPriceDecending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
     const sortedProducts = _orderBy(products, ['price'], ['desc']);

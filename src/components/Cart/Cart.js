@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _isEmpty from 'lodash/isEmpty';
 import './cart-styles.css';
 
 class Cart extends React.Component {
   render() {
-    const {} = this.props;
+    const { shoppingCart } = this.props;
 
     return (
       <div className="shopping-cart">
@@ -13,13 +14,20 @@ class Cart extends React.Component {
           <span className="cart-count">0</span>
         </div>
 
-        <div className="cart-item">
-          <div>
-            <p className="title">Item Name</p>
-            <p className="subtitle">Item variant</p>
+        {_isEmpty() ? (
+          <div className="empty-cart">
+            <p className="title">No Items in Cart</p>
           </div>
-          <span>£ 0</span>
-        </div>
+        ) : (
+          <div className="cart-item">
+            {console.log(shoppingCart)}
+            <div>
+              <p className="title">Item Name</p>
+              <p className="subtitle">Item variant</p>
+            </div>
+            <span>£ 0</span>
+          </div>
+        )}
 
         <p className="cart-total">
           <span>Total</span>
@@ -30,6 +38,8 @@ class Cart extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  shoppingCart: state.shoppingCart
+});
 
 export default connect(mapStateToProps)(Cart);

@@ -36,19 +36,19 @@
   object-fit: contain;
 }
 
-.product-card .card-content {
+.product-card .card-content > .description {
   margin: 0.5rem 0 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.product-card .card-content .title {
+.product-card .card-content .description .title {
   white-space: break-spaces;
   flex: 1;
 }
 
-.product-card .card-content .price {
+.product-card .card-content .product-card .price {
   flex: 1;
   white-space: nowrap;
 }
