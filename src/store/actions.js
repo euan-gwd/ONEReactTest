@@ -24,6 +24,12 @@ export const addToCart = (product) => {
   };
 };
 
+export const removeFromCart = (product) => {
+  return (dispatch) => {
+    dispatch({ type: actionTypes.REMOVE_FROM_CART, payload: product });
+  };
+};
+
 export const sortProductsByTitleAscending = () => {
   return (dispatch, getState) => {
     const products = getState().products;

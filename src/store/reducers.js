@@ -1,4 +1,3 @@
-import produce from 'immer';
 import * as actionTypes from './constants';
 
 const initialState = {
@@ -8,38 +7,55 @@ const initialState = {
   shoppingCart: []
 };
 
-export const reducer = produce((draft, action) => {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.LOAD_PRODUCTS_BEGIN:
-      draft.productsLoading = true;
-      draft.productsError = null;
-      return;
+      return {
+        ...state,
+        productsLoading: true,
+        productsError: null
+      };
     case actionTypes.LOAD_PRODUCTS_SUCCESS:
-      draft.productsLoading = false;
-      draft.productsError = null;
-      draft.products = action.payload;
-      return;
+      return {
+        ...state,
+        productsLoading: false,
+        productsError: null,
+        products: action.payload
+      };
     case actionTypes.LOAD_PRODUCTS_ERROR:
-      draft.productsLoading = false;
-      draft.productsError = action.error;
-      return;
+      return {
+        ...state,
+        productsLoading: false,
+        productsError: action.error
+      };
     case actionTypes.SORT_PRODUCTS_TITLE_ASC:
-      draft.products = action.payload;
-      return;
+      return {
+        ...state,
+        products: action.payload
+      };
     case actionTypes.SORT_PRODUCTS_TITLE_DESC:
-      draft.products = action.payload;
-      return;
+      return {
+        ...state,
+        products: action.payload
+      };
     case actionTypes.SORT_PRODUCTS_PRICE_ASC:
-      draft.products = action.payload;
-      return;
+      return {
+        ...state,
+        products: action.payload
+      };
     case actionTypes.SORT_PRODUCTS_PRICE_DESC:
-      draft.products = action.payload;
-      return;
+      return {
+        ...state,
+        products: action.payload
+      };
     case actionTypes.ADD_TO_CART:
-      draft.shoppingCart.push(action.payload);
-      return;
+      return {
+        ...state,
+        shoppingCart: [...state.shoppingCart, action.payload]
+      };
+    case actionTypes.REMOVE_FROM_CART:
+      return { ...state, shoppingCart: state.shoppingCart.filter((item, idx) => item.id !== action.payload.id) };
     default:
-      return;
+      return state;
   }
-  return state;
-}, initialState);
+}

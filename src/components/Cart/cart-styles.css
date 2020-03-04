@@ -84,6 +84,12 @@
   color: var(--primary);
   justify-self: end;
   align-self: end;
+  border: none;
+}
+
+.item-total .item-action :hover {
+  cursor: pointer;
+  color: var(--primary-hover);
 }
 
 .shopping-cart .cart-total {

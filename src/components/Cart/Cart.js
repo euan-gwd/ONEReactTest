@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import _isEmpty from 'lodash/isEmpty';
+import { removeFromCart } from '../../store/actions';
 import { FiDelete } from 'react-icons/fi';
 import './cart-styles.css';
 
@@ -17,15 +18,17 @@ const Cart = ({ shoppingCart, removeFromCart }) => (
       </div>
     ) : (
       <div className="cart-container">
-        {shoppingCart.map((cartItem) => (
-          <div className="cart-item" key={cartItem.id}>
+        {shoppingCart.map((item) => (
+          <div className="cart-item" key={item.id}>
             <div className="item-description">
-              <p className="title">{cartItem.title}</p>
+              <p className="title">{item.title}</p>
               <p className="subtitle">Item variant</p>
             </div>
             <div className="item-total">
-              <p className="item-price">{`£ ${cartItem.variants[0].price}`}</p>
-              <FiDelete className="item-action" />
+              <p className="item-price">{`£ ${item.variants[0].price}`}</p>
+              <button className="item-action" onClick={() => removeFromCart(item)}>
+                <FiDelete />
+              </button>
             </div>
           </div>
         ))}
@@ -44,8 +47,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  removeFromCart: (product) => {
-    dispatch(removeFromCart(product));
+  removeFromCart: (item) => {
+    dispatch(removeFromCart(item));
   }
 });
 
