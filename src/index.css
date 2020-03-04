@@ -1,8 +1,29 @@
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
 }
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-color: #f5f3f6;
+  --alt-bg-color: #fefefe;
+  --main-text-color: #030104;
+  --alt-text-color: #ffffff;
+  --primary: #e95f66;
+  --primary-hover: #e73a57;
+  --secondary: #e6e4e7;
+  --secondary-hover: #bdbfc0;
+  --divider-grey: #f1f1f1;
 }
