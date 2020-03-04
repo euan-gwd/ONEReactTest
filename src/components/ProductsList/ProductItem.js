@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../store/actions';
-import './product-list-styles.css';
+import './product-item-styles.css';
 
 const ProductItem = ({ product, addToCart }) => (
   <div key={product.id} className="product-card">

@@ -50,7 +50,7 @@
 
 .shopping-cart .cart-item {
   display: grid;
-  grid-template-columns: 1fr 4rem 40px;
+  grid-template-columns: 1fr 4rem;
   grid-template-rows: 1fr;
   grid-column-gap: 10px;
   margin-top: 0.5rem;
@@ -71,19 +71,22 @@
   color: var(--primary);
 }
 
-.cart-item .item-price {
-  justify-self: center;
+.item-total {
+  display: grid;
 }
 
-.cart-item .item-action {
-  justify-self: center;
-  /* align-self: center; */
+.item-total .item-price {
+  justify-self: end;
+}
+
+.item-total .item-action {
   font-size: 3vh;
   color: var(--primary);
+  justify-self: end;
+  align-self: end;
 }
 
 .shopping-cart .cart-total {
-  width: 23vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
