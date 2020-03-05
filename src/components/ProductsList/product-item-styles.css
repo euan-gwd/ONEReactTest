@@ -1,6 +1,6 @@
 .product-card {
   display: grid;
-  grid-template-rows: 100px 8vh 2vh 56px;
+  grid-template-rows: 100px 8vh 56px;
   grid-row-gap: 10px;
   padding: 0.5rem 0.5rem 0.75rem;
   border: 3px solid var(--alt-bg-color);
@@ -43,11 +43,10 @@
   white-space: nowrap;
 }
 
-.product-card .size-select-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  padding: 0.5rem 0;
+.product-card .card-content .size {
+  white-space: nowrap;
+  font-size: smaller;
+  color: var(--primary);
 }
 
 .button-group {

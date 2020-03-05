@@ -1,8 +1,20 @@
 import * as actionTypes from './constants';
 import _orderBy from 'lodash/orderBy';
+import _includes from 'lodash/includes';
 
 const getProducts = () => {
   return fetch('https://j-parre.myshopify.com/products.json').then((res) => res.json());
+};
+
+const flattenedProducts = (products) => {
+  const newProducts = products.map((product) => {
+    let newProductsArr = [];
+    for (const item of product.variants) {
+      newProductsArr.push({ ...product, size: { ...item, price: Number(item.price) }, id: item.id });
+    }
+    return newProductsArr;
+  });
+  return newProducts.flat();
 };
 
 export const loadProducts = () => {
@@ -10,7 +22,9 @@ export const loadProducts = () => {
     dispatch({ type: actionTypes.LOAD_PRODUCTS_BEGIN });
     getProducts()
       .then((res) => {
-        dispatch({ type: actionTypes.LOAD_PRODUCTS_SUCCESS, payload: res.products });
+        const products = res.products;
+        const allProducts = flattenedProducts(products);
+        dispatch({ type: actionTypes.LOAD_PRODUCTS_SUCCESS, payload: allProducts });
       })
       .catch((error) => {
         dispatch({ type: actionTypes.LOAD_PRODUCTS_ERROR, error });
@@ -49,7 +63,7 @@ export const sortProductsByTitleDecending = () => {
 export const sortProductsByPriceAscending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
-    const sortedProducts = _orderBy(products, ['price'], ['asc']);
+    const sortedProducts = _orderBy(products, products[0].size.price, ['asc']);
     dispatch({ type: actionTypes.SORT_PRODUCTS_PRICE_ASC, payload: sortedProducts });
   };
 };

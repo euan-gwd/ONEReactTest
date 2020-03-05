@@ -12,13 +12,13 @@ class ProductsList extends React.Component {
     }
 
     if (productsError) {
-      return <div>{error.message}</div>;
+      return <div>{`Oops something went wrong...`}</div>;
     }
 
     return (
       <div className="products-listing">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
+        {products.map((product, idx) => (
+          <ProductItem key={product.id} idx={idx} product={product} />
         ))}
       </div>
     );
