@@ -22,7 +22,7 @@ const Cart = ({ shoppingCart, removeFromCart }) => (
           <div className="cart-item" key={item.id}>
             <div className="item-description">
               <p className="title">{item.title}</p>
-              <p className="subtitle">Item variant</p>
+              <p className="subtitle">{item.variants[0].title}</p>
             </div>
             <div className="item-total">
               <p className="item-price">{`£ ${item.variants[0].price}`}</p>

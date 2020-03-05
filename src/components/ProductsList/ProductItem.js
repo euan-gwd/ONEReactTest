@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addToCart, openProductVariantModal, closeProductVariantModal } from '../../store/actions';
-import Modal from 'react-modal';
+import { addToCart } from '../../store/actions';
 import './product-item-styles.css';
 
-const ProductItem = ({ product, addToCart, isModalOpen, openModal, closeModal }) => {
+const ProductItem = ({ product, addToCart }) => {
   const [selectedVariant, setSelectedVariant] = useState(undefined);
 
   const handleVariantSelect = (evt) => {
@@ -32,52 +31,29 @@ const ProductItem = ({ product, addToCart, isModalOpen, openModal, closeModal })
           <p>{`£ ${product.variants[0].price}`}</p>
         </div>
       </div>
-      <div className="button-group">
-        <button className="primary-button" onClick={() => openModal()}>
-          Add to Cart
-        </button>
-        <button className="secondary-button">Quick View</button>
-      </div>
-      <Modal isOpen={isModalOpen} className="modal" overlayClassName="modal-overlay" onRequestClose={closeModal}>
-        <form className="modal-content" onSubmit={handleSubmit}>
-          <h3>Please confirm size</h3>
-          <select name="select-variant" id="select-variant" value={selectedVariant} onChange={handleVariantSelect}>
-            {product.variants.map((variant) => (
-              <option key={variant.id} value={variant.id}>
-                {variant.title}
-              </option>
-            ))}
-          </select>
-          <div className="button-group">
-            <button className="primary-button-modal" type="submit" disabled={selectedVariant === undefined}>
-              Add to Cart
-            </button>
-            <button
-              className="secondary-button-modal"
-              onClick={() => {
-                closeModal();
-                setSelectedVariant(undefined);
-              }}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </Modal>
+      <form className="size-select-form" onSubmit={handleSubmit}>
+        <select name="select-variant" id="select-variant" value={selectedVariant} onChange={handleVariantSelect}>
+          {product.variants.map((variant) => (
+            <option key={variant.id} value={variant.id}>
+              {variant.title}
+            </option>
+          ))}
+        </select>
+        <div className="button-group">
+          <button className="primary-button" type="submit" disabled={selectedVariant === undefined}>
+            Add to Cart
+          </button>
+          <button className="secondary-button">Quick View</button>
+        </div>
+      </form>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  isModalOpen: state.productVariantModalOpen
-});
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (product) => dispatch(addToCart(product)),
-    openModal: () => dispatch(openProductVariantModal()),
-    closeModal: () => dispatch(closeProductVariantModal())
+    addToCart: (product) => dispatch(addToCart(product))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductItem);
+export default connect(null, mapDispatchToProps)(ProductItem);
