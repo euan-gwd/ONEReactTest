@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import _chunk from 'lodash/chunk';
+import Button from '../Buttons/Button';
 import ProductItem from './ProductItem';
 import './product-list-styles.css';
 

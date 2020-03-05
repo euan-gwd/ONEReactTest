@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../store/actions';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 import './product-item-styles.css';
 
 const ProductItem = ({ product, addToCart }) => (
@@ -17,10 +17,10 @@ const ProductItem = ({ product, addToCart }) => (
       <p className="size">{product.option1}</p>
     </div>
     <div className="button-group">
-      <Button className="primary-button fluid" onClick={() => addToCart(product)}>
+      <Button className="primary-button" onClick={() => addToCart(product)}>
         Add to Cart
       </Button>
-      <Button className="secondary-button fluid">Quick View</Button>
+      <Button className="secondary-button">Quick View</Button>
     </div>
   </div>
 );

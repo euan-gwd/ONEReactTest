@@ -1,11 +1,11 @@
 .products-listing {
-  flex: 2 0 25vw;
+  width: 70%;
   margin: 1rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
 
 .centered-alerts {

@@ -17,17 +17,17 @@ const ProductSort = ({
 }) => (
   <div className="product-sort">
     <div className="button-group">
+      <button className="primary-button" onClick={() => sortProductsByPriceDecending()}>
+        <FaSortAmountDown /> Price
+      </button>
+      <button className="primary-button" onClick={() => sortProductsByPriceAscending()}>
+        <FaSortAmountUp /> Price
+      </button>
       <button className="primary-button" onClick={() => sortProductsByTitleAscending()}>
         <FaSortAlphaDown /> Title
       </button>
       <button className="primary-button" onClick={() => sortProductsByTitleDecending()}>
         <FaSortAlphaUp /> Title
-      </button>
-      <button className="primary-button" onClick={() => sortProductsByPriceAscending()}>
-        <FaSortAmountDown /> Price
-      </button>
-      <button className="primary-button" onClick={() => sortProductsByPriceDecending()}>
-        <FaSortAmountUp /> Price
       </button>
     </div>
   </div>
