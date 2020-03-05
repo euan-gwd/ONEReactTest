@@ -80,3 +80,74 @@
   background-color: var(--secondary-hover);
   cursor: pointer;
 }
+
+.modal {
+  position: absolute;
+  top: 20vh;
+  left: 35vw;
+  right: 30vw;
+  bottom: 40vh;
+  padding: 0.5rem;
+  border: 3px solid var(--alt-bg-color);
+  background: var(--alt-bg-color);
+  box-shadow: var(--shadow);
+  z-index: 4;
+}
+
+.modal .button-group {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.primary-button-modal {
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--alt-text-color);
+  background-color: var(--primary);
+  border: none;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.primary-button-modal:hover {
+  color: var(--alt-text-color);
+  background-color: var(--primary-hover);
+  cursor: pointer;
+}
+
+.primary-button-modal:disabled {
+  color: var(--alt-text-color);
+  background-color: var(--primary-disabled);
+  cursor: not-allowed;
+}
+
+.secondary-button-modal {
+  padding: 0.5rem;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.secondary-button-modal:hover {
+  background-color: var(--secondary-hover);
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #29292925;
+}

@@ -4,7 +4,8 @@ const initialState = {
   productsLoading: false,
   productsError: null,
   products: [],
-  shoppingCart: []
+  shoppingCart: [],
+  productVariantModalOpen: false
 };
 
 export function reducer(state = initialState, action) {
@@ -51,10 +52,21 @@ export function reducer(state = initialState, action) {
     case actionTypes.ADD_TO_CART:
       return {
         ...state,
+        productVariantModalOpen: false,
         shoppingCart: [...state.shoppingCart, action.payload]
       };
     case actionTypes.REMOVE_FROM_CART:
       return { ...state, shoppingCart: state.shoppingCart.filter((item, idx) => item.id !== action.payload.id) };
+    case actionTypes.OPEN_SELECT_PRODUCT_VARIANT_MODAL:
+      return {
+        ...state,
+        productVariantModalOpen: true
+      };
+    case actionTypes.CLOSE_SELECT_PRODUCT_VARIANT_MODAL:
+      return {
+        ...state,
+        productVariantModalOpen: false
+      };
     default:
       return state;
   }

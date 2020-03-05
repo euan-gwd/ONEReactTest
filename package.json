@@ -1,7 +1,7 @@
 {
-  "name": "my-nwb-app",
+  "name": "Eclectees-app",
   "version": "1.0.0",
-  "description": "Describe my-nwb-app here",
+  "description": "Code test for ONE",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",
@@ -12,11 +12,11 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "immer": "^6.0.0",
     "lodash": "^4.17.15",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-icons": "^3.9.0",
+    "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"

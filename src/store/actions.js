@@ -61,3 +61,14 @@ export const sortProductsByPriceDecending = () => {
     dispatch({ type: actionTypes.SORT_PRODUCTS_PRICE_DESC, payload: sortedProducts });
   };
 };
+
+export const openProductVariantModal = () => {
+  return (dispatch) => {
+    dispatch({ type: actionTypes.OPEN_SELECT_PRODUCT_VARIANT_MODAL });
+  };
+};
+export const closeProductVariantModal = () => {
+  return (dispatch) => {
+    dispatch({ type: actionTypes.CLOSE_SELECT_PRODUCT_VARIANT_MODAL });
+  };
+};
