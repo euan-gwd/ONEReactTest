@@ -21,18 +21,20 @@
 
 .shopping-cart-header .cart-title-text {
   text-transform: uppercase;
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 .shopping-cart-header .cart-count {
+  margin-left: 0.25rem;
+  padding-right: 0.1rem;
   background-color: var(--primary);
-  margin-left: 0.5rem;
   color: var(--alt-text-color);
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 3.8vh;
+  width: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: small;
   border-radius: 50%;
 }
 

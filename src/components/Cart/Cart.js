@@ -3,18 +3,11 @@ import { connect } from 'react-redux';
 import _isEmpty from 'lodash/isEmpty';
 import { removeFromCart } from '../../store/actions';
 import { FiDelete } from 'react-icons/fi';
+import { calculateTotals } from '../utils';
 import './cart-styles.css';
 
 const Cart = ({ shoppingCart, removeFromCart }) => {
-  const lineItemTotals = shoppingCart.map((item) => {
-    if (shoppingCart.length > 0) {
-      return Number(item.price);
-    }
-    return [];
-  });
-  const calculateCartTotal = lineItemTotals.reduce((previous, current) => previous + current, 0);
-  const cartTotal = calculateCartTotal.toFixed(2);
-
+  const cartTotal = calculateTotals(shoppingCart);
   return (
     <div className="shopping-cart">
       <div className="shopping-cart-header">

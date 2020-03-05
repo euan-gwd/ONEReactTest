@@ -21,24 +21,28 @@
 }
 
 .menubar-cart {
-  justify-self: flex-end;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: medium;
-  width: 6vw;
+  width: auto;
+}
+
+.menubar-total {
+  flex: 1 1 6rem;
 }
 
 .menubar-cart .icon {
+  font-size: 4vh;
   color: var(--primary);
 }
 
 .menubar-cart .cart-count {
-  background-color: var(--primary);
   margin-left: 0.25rem;
+  background-color: var(--primary);
   color: var(--alt-text-color);
-  height: 1rem;
-  width: 1rem;
+  height: 3.5vh;
+  width: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
