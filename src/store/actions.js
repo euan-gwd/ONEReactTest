@@ -34,7 +34,9 @@ export const loadProducts = () => {
 
 export const addToCart = (product) => {
   return (dispatch) => {
-    dispatch({ type: actionTypes.ADD_TO_CART, payload: product });
+    const timestamp = Date.now();
+    const productWithUID = { ...product, id: `${product.id} + ${timestamp}` };
+    dispatch({ type: actionTypes.ADD_TO_CART, payload: productWithUID });
   };
 };
 
