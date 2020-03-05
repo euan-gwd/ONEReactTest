@@ -8,6 +8,7 @@ import './cart-styles.css';
 
 const Cart = ({ shoppingCart, removeFromCart }) => {
   const cartTotal = calculateTotals(shoppingCart);
+  const tax = (cartTotal * 0.2).toFixed(2);
   return (
     <div className="shopping-cart">
       <div className="shopping-cart-header">
@@ -41,7 +42,7 @@ const Cart = ({ shoppingCart, removeFromCart }) => {
       <div className="cart-totals">
         <div className="total-label-container">
           <p className="label-title">Total</p>
-          <p className="label-subtitle">Inc. taxes</p>
+          <p className="label-subtitle">{`Inc. £${tax} in taxes`}</p>
         </div>
         <p className="total-price">{`£ ${cartTotal}`}</p>
       </div>
