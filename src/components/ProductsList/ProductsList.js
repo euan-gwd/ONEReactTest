@@ -1,29 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import _chunk from 'lodash/chunk';
 import ProductItem from './ProductItem';
 import './product-list-styles.css';
 
-class ProductsList extends React.Component {
-  render() {
-    const { products, productsLoading, productsError } = this.props;
-
-    if (productsLoading) {
-      return <div>Loading...</div>;
-    }
-
-    if (productsError) {
-      return <div>{`Oops something went wrong...`}</div>;
-    }
-
-    return (
-      <div className="products-listing">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </div>
-    );
+const ProductsList = ({ products, productsLoading, productsError }) => {
+  if (productsLoading) {
+    return <div className="centered-alerts">{`Loading...`}</div>;
   }
-}
+
+  if (productsError) {
+    return <div className="centered-alerts">{`Oops something went wrong...`}</div>;
+  }
+
+  return (
+    <div className="products-listing">
+      {products.map((product) => (
+        <ProductItem key={product.id} product={product} />
+      ))}
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => ({
   productsLoading: state.productsLoading,
