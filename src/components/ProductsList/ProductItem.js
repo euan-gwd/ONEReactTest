@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addToCart } from '../../store/actions';
 import './product-item-styles.css';
 
-const ProductItem = ({ product, addToCart, idx }) => (
+const ProductItem = ({ product, addToCart }) => (
   <div key={product.id} className="product-card">
     <div className="image-container">
       <img src={product.images[0].src} alt="product Image" className="product-image" />
@@ -16,7 +16,7 @@ const ProductItem = ({ product, addToCart, idx }) => (
       <p className="size">{product.option1}</p>
     </div>
     <div className="button-group">
-      <button className="primary-button" onClick={() => addToCart(product, idx)}>
+      <button className="primary-button" onClick={() => addToCart(product)}>
         Add to Cart
       </button>
       <button className="secondary-button">Quick View</button>
@@ -26,7 +26,7 @@ const ProductItem = ({ product, addToCart, idx }) => (
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (product, idx) => dispatch(addToCart(product, idx))
+    addToCart: (product) => dispatch(addToCart(product))
   };
 };
 

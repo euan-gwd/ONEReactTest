@@ -4,7 +4,8 @@ const initialState = {
   productsLoading: false,
   productsError: null,
   products: [],
-  shoppingCart: []
+  shoppingCart: [],
+  shoppingCartTotal: 0
 };
 
 export function reducer(state = initialState, action) {

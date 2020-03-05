@@ -32,7 +32,7 @@ export const loadProducts = () => {
   };
 };
 
-export const addToCart = (product, idx) => {
+export const addToCart = (product) => {
   return (dispatch) => {
     dispatch({ type: actionTypes.ADD_TO_CART, payload: product });
   };
