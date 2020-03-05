@@ -20,7 +20,9 @@ const ProductItem = ({ product, addToCart }) => (
       <Button className="primary-button" onClick={() => addToCart(product)}>
         Add to Cart
       </Button>
-      <Button className="secondary-button">Quick View</Button>
+      <Button className="secondary-button" disabled>
+        Quick View
+      </Button>
     </div>
   </div>
 );

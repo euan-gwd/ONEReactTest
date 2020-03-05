@@ -38,10 +38,13 @@ const Cart = ({ shoppingCart, removeFromCart }) => {
         </div>
       )}
 
-      <p className="cart-total">
-        <span>Total</span>
-        <span>{`£ ${cartTotal}`}</span>
-      </p>
+      <div className="cart-totals">
+        <div className="total-label-container">
+          <p className="label-title">Total</p>
+          <p className="label-subtitle">Inc. taxes</p>
+        </div>
+        <p className="total-price">{`£ ${cartTotal}`}</p>
+      </div>
     </div>
   );
 };

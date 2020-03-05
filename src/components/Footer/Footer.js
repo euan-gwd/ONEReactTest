@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <LogoAlt />
-      <p>Eclectees Co Ltd. 2018</p>
+      <p>©Eclectees Co Ltd. 2018</p>
       <p className="terms">Terms and Conditions | Privacy Policy | Contact Us</p>
     </div>
   );
