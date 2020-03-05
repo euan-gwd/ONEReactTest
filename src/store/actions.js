@@ -10,7 +10,7 @@ const flattenedProducts = (products) => {
   const newProducts = products.map((product) => {
     let newProductsArr = [];
     for (const item of product.variants) {
-      newProductsArr.push({ ...product, size: { ...item, price: Number(item.price) }, id: item.id });
+      newProductsArr.push({ ...item, price: Number(item.price), ...product, id: item.id });
     }
     return newProductsArr;
   });
@@ -32,7 +32,7 @@ export const loadProducts = () => {
   };
 };
 
-export const addToCart = (product) => {
+export const addToCart = (product, idx) => {
   return (dispatch) => {
     dispatch({ type: actionTypes.ADD_TO_CART, payload: product });
   };
@@ -63,7 +63,7 @@ export const sortProductsByTitleDecending = () => {
 export const sortProductsByPriceAscending = () => {
   return (dispatch, getState) => {
     const products = getState().products;
-    const sortedProducts = _orderBy(products, products[0].size.price, ['asc']);
+    const sortedProducts = _orderBy(products, ['price'], ['asc']);
     dispatch({ type: actionTypes.SORT_PRODUCTS_PRICE_ASC, payload: sortedProducts });
   };
 };

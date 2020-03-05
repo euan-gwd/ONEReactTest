@@ -11,9 +11,9 @@ const ProductItem = ({ product, addToCart, idx }) => (
     <div className="card-content">
       <div className="description">
         <p className="title">{product.title}</p>
-        <p>{`£ ${product.size.price}`}</p>
+        <p>{`£ ${product.price}`}</p>
       </div>
-      <p className="size">{product.size.title}</p>
+      <p className="size">{product.option1}</p>
     </div>
     <div className="button-group">
       <button className="primary-button" onClick={() => addToCart(product, idx)}>

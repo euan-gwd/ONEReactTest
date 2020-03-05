@@ -8,7 +8,7 @@ import './cart-styles.css';
 const Cart = ({ shoppingCart, removeFromCart }) => {
   const lineItemTotals = shoppingCart.map((item) => {
     if (shoppingCart.length > 0) {
-      return Number(item.size.price);
+      return Number(item.price);
     }
     return [];
   });
@@ -32,10 +32,10 @@ const Cart = ({ shoppingCart, removeFromCart }) => {
             <div className="cart-item" key={item.id}>
               <div className="item-description">
                 <p className="title">{item.title}</p>
-                <p className="subtitle">{item.size.title}</p>
+                <p className="subtitle">{item.option1}</p>
               </div>
               <div className="item-total">
-                <p className="item-price">{`£ ${item.size.price}`}</p>
+                <p className="item-price">{`£ ${item.price}`}</p>
                 <button className="item-action" onClick={() => removeFromCart(item)}>
                   <FiDelete />
                 </button>
