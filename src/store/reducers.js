@@ -4,6 +4,7 @@ const initialState = {
   productsLoading: false,
   productsError: null,
   products: [],
+  productsGroup: 0,
   shoppingCart: [],
   shoppingCartTotal: 0
 };

@@ -1,9 +1,14 @@
 import * as actionTypes from './constants';
 import _orderBy from 'lodash/orderBy';
-import _includes from 'lodash/includes';
 
 const getProducts = () => {
-  return fetch('https://j-parre.myshopify.com/products.json').then((res) => res.json());
+  return fetch('https://j-parre.myshopify.com/products.json')
+    .then((res) => res.json())
+    .then((data) => {
+      const result = data.products;
+      const products = flattenedProducts(result);
+      return products;
+    });
 };
 
 const flattenedProducts = (products) => {
@@ -21,10 +26,8 @@ export const loadProducts = () => {
   return (dispatch) => {
     dispatch({ type: actionTypes.LOAD_PRODUCTS_BEGIN });
     getProducts()
-      .then((res) => {
-        const products = res.products;
-        const allProducts = flattenedProducts(products);
-        dispatch({ type: actionTypes.LOAD_PRODUCTS_SUCCESS, payload: allProducts });
+      .then((products) => {
+        dispatch({ type: actionTypes.LOAD_PRODUCTS_SUCCESS, payload: products });
       })
       .catch((error) => {
         dispatch({ type: actionTypes.LOAD_PRODUCTS_ERROR, error });
