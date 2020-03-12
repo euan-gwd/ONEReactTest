@@ -7,7 +7,7 @@
 }
 
 .shop-container {
-  display: flex;
-  justify-content: space-between;
   margin: 3vh 3vw;
+  display: grid;
+  grid-template-columns: 1fr 25vw;
 }

@@ -4,19 +4,23 @@
 
 .product-sort .button-group {
   display: grid;
-  grid-template-columns: repeat(4, 10vw);
+  grid-template-columns: repeat(4, minmax(40px, 10vw));
   column-gap: 10px;
   justify-content: center;
 }
 
 .product-sort .primary-button {
-  padding: 0.25rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
   color: var(--primary);
   background-color: transparent;
   border: 1px solid var(--primary);
   width: 100%;
+  min-width: min-content;
   height: 5vh;
+  min-height: 40px;
   text-transform: uppercase;
 }
 
