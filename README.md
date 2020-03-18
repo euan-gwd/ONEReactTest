@@ -5,6 +5,7 @@ Code Test for ONE, exampe of Online Store.
 ## Brief
 
 Product data must be requested from the following api endpoint (via some form of http request):
+
 ○ https://j-parre.myshopify.com/products.json
 
 ● Products must be rendered on a single page, displaying the following attributes in the
