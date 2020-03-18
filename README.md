@@ -26,4 +26,3 @@ be able to add/remove multiple products to/from a shopping cart
 ● Shopping cart must render a count for the total number of products in the
 shopping cart
 
-![Design Mock Up]https://github.com/euan-gwd/ONEReactTest/blob/master/designmockup.png
