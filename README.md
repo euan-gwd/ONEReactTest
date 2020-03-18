@@ -27,3 +27,4 @@ be able to add/remove multiple products to/from a shopping cart
 shopping cart
 
 ![Design Mock Up]
+https://github.com/euan-gwd/ONEReactTest/blob/master/designmockup.png
