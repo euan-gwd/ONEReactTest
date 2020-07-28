@@ -9,7 +9,7 @@ const initialState = {
   shoppingCartTotal: 0
 };
 
-export function reducer(state = initialState, action) {
+export function rootReducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.LOAD_PRODUCTS_BEGIN:
       return {

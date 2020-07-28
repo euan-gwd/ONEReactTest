@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { reducer } from './reducers';
+import { rootReducer } from './reducers';
 import { loadProducts } from './actions';
 import thunk from 'redux-thunk';
 
@@ -13,7 +13,7 @@ const configureStore = () => {
 
   const enhancer = composeEnhancers(applyMiddleware(thunk));
 
-  const store = createStore(reducer, enhancer);
+  const store = createStore(rootReducer, enhancer);
 
   store.dispatch(loadProducts());
 

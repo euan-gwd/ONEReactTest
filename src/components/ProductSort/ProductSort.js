@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {useDispatch} from 'react-redux'
 import { FaSortAlphaDown, FaSortAlphaUp, FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
 import {
   sortProductsByTitleAscending,
@@ -9,37 +9,29 @@ import {
 } from '../../store/actions';
 import './product-sort-styles.css';
 
-const ProductSort = ({
-  sortProductsByTitleAscending,
-  sortProductsByTitleDecending,
-  sortProductsByPriceAscending,
-  sortProductsByPriceDecending
-}) => (
+const ProductSort = (
+
+) => {
+  const dispatch = useDispatch()
+  return(
   <div className="product-sort">
     <div className="button-group">
-      <button className="primary-button" onClick={() => sortProductsByPriceDecending()}>
+      <button className="primary-button" onClick={() => dispatch(sortProductsByPriceDecending())}>
         <FaSortAmountDown /> Price
       </button>
-      <button className="primary-button" onClick={() => sortProductsByPriceAscending()}>
+      <button className="primary-button" onClick={() => dispatch(sortProductsByPriceAscending())}>
         <FaSortAmountUp /> Price
       </button>
-      <button className="primary-button" onClick={() => sortProductsByTitleAscending()}>
+      <button className="primary-button" onClick={() => dispatch(sortProductsByTitleAscending())}>
         <FaSortAlphaDown /> Title
       </button>
-      <button className="primary-button" onClick={() => sortProductsByTitleDecending()}>
+      <button className="primary-button" onClick={() => dispatch(sortProductsByTitleDecending())}>
         <FaSortAlphaUp /> Title
       </button>
     </div>
   </div>
-);
+)};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    sortProductsByTitleAscending: () => dispatch(sortProductsByTitleAscending()),
-    sortProductsByTitleDecending: () => dispatch(sortProductsByTitleDecending()),
-    sortProductsByPriceAscending: () => dispatch(sortProductsByPriceAscending()),
-    sortProductsByPriceDecending: () => dispatch(sortProductsByPriceDecending())
-  };
-};
 
-export default connect(null, mapDispatchToProps)(ProductSort);
+
+export default ProductSort;
